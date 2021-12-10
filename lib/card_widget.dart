@@ -16,7 +16,7 @@ class GuzelCard extends StatelessWidget {
       child: Card(
         elevation: 15.0,
         color: cardColor,
-        child: Column(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               simge,

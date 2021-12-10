@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vki_hesaplama/2.sayfa.dart';
 import 'package:vki_hesaplama/card_widget.dart';
 import 'package:vki_hesaplama/sabitler.dart';
 
@@ -64,29 +66,33 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GuzelCard(
-                  fonksiyon: () {
-                    setState(() {
-                      seciliCinsiyet = cinsiyet.male;
-                    });
-                  },
-                  cardColor: seciliCinsiyet == cinsiyet.male
-                      ? rkAktifCardBackColor
-                      : rkPasifCardBackColor,
-                  simge: Icons.male,
-                  metin: "ERKEK",
+                Expanded(
+                  child: GuzelCard(
+                    fonksiyon: () {
+                      setState(() {
+                        seciliCinsiyet = cinsiyet.male;
+                      });
+                    },
+                    cardColor: seciliCinsiyet == cinsiyet.male
+                        ? rkAktifCardBackColor
+                        : rkPasifCardBackColor,
+                    simge: Icons.male,
+                    metin: "ERKEK",
+                  ),
                 ),
-                GuzelCard(
-                  fonksiyon: () {
-                    setState(() {
-                      seciliCinsiyet = cinsiyet.female;
-                    });
-                  },
-                  cardColor: seciliCinsiyet == cinsiyet.female
-                      ? rkAktifCardBackColor
-                      : rkPasifCardBackColor,
-                  simge: Icons.female,
-                  metin: "KADIN",
+                Expanded(
+                  child: GuzelCard(
+                    fonksiyon: () {
+                      setState(() {
+                        seciliCinsiyet = cinsiyet.female;
+                      });
+                    },
+                    cardColor: seciliCinsiyet == cinsiyet.female
+                        ? rkAktifCardBackColor
+                        : rkPasifCardBackColor,
+                    simge: Icons.female,
+                    metin: "KADIN",
+                  ),
                 ),
               ],
             ),
@@ -95,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: OrtakCard(
               () {},
               Colors.red,
-              Column(
+              Column(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "HEIGHT",
@@ -183,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Expanded(child: OrtakCard(() {},
                 Colors.red,
-                Column(
+                Column(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "AGE",
@@ -229,6 +235,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
+          Container(height: 50,width: double.infinity,child: ElevatedButton(onPressed: (){Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => sayfa()),
+          );}, child: Text("HESAPLA")))
 
         ],
       ),
