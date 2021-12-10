@@ -16,6 +16,11 @@ TextStyle tsHeightStyle = TextStyle(
   fontSize: 80,
   fontWeight: FontWeight.bold,
 );
+TextStyle tsButtonStyle = TextStyle(
+  color: rkCardForeColor,
+  fontSize: 35,
+  fontWeight: FontWeight.bold,
+);
 
 TextStyle tsCmStyle = TextStyle(
   color: rkCardForeColor,
@@ -29,3 +34,7 @@ SliderThemeData stSliderTheme = SliderThemeData(
   thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
   overlayShape: RoundSliderOverlayShape(overlayRadius: 45.0),
 );
+
+final ButtonStyle bsStyle =
+ElevatedButton.styleFrom(shape: new CircleBorder(
+));

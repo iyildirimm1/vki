@@ -34,9 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Color cardColor = rkPasifCardBackColor;
   cinsiyet seciliCinsiyet;
   int height = 180;
+  int weight = 60;
+  int age= 20;
+
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: rkZeminArkaPlan,
       appBar: AppBar(
@@ -128,6 +133,103 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          Row(
+            children: [
+              Expanded(child: OrtakCard(() {},
+                Colors.red,
+                Column(
+                  children: [
+                    Text(
+                      "WEIGHT",
+                      style: tsActivCardColor,
+                    ),
+                    Row(
+                      textBaseline: TextBaseline.alphabetic,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          weight.toString(),
+                          style: tsHeightStyle,
+                        ),
+
+                      ],
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(style: bsStyle,onPressed: (){
+                            setState(() {
+                              weight--;
+                            });
+                          }, child:Text("-",style: tsButtonStyle,) ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(style: bsStyle,onPressed: (){
+                            setState(() {
+                              weight++;
+                            });
+                          }, child:Text("+",style: tsButtonStyle,) ),
+                        )
+
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              ),
+              Expanded(child: OrtakCard(() {},
+                Colors.red,
+                Column(
+                  children: [
+                    Text(
+                      "AGE",
+                      style: tsActivCardColor,
+                    ),
+                    Row(
+                      textBaseline: TextBaseline.alphabetic,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          age.toString(),
+                          style: tsHeightStyle,
+                        ),
+
+                      ],
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(style: bsStyle,onPressed: (){
+                            setState(() {
+                              age--;
+                            });
+                          }, child:Text("-",style: tsButtonStyle,) ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(style: bsStyle,onPressed: (){
+                            setState(() {
+                              age++;
+                            });
+                          }, child:Text("+",style: tsButtonStyle,) ),
+                        )
+
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              ),
+            ],
+          ),
+
         ],
       ),
     );
